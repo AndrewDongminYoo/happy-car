@@ -2,71 +2,86 @@ apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
 /**
- * This is the configuration block to customize your React Native Android app.
- * By default you don't need to apply any configuration, just uncomment the lines you need.
+ * 이 구성 블록은 React Native 안드로이드 앱을 사용자 정의하기 위한 구성 블록입니다.
+ * 대부분의 경우 구성을 적용할 필요가 없으며, 필요 시에 해당되는 줄의 주석만 해제하면 됩니다.
  */
 react {
     /* Folders */
-    //   The root of your project, i.e. where "package.json" lives. Default is '..'
+    //   프로젝트의 루트, 즉 "package.json"이 있는 위치입니다. 기본값은 '..'입니다.
     // root = file("../")
-    //   The folder where the react-native NPM package is. Default is ../node_modules/react-native
+    //   react-native NPM 패키지가 있는 폴더. 기본값은 ../node_modules/react-native입니다.
     // reactNativeDir = file("../node_modules/react-native")
-    //   The folder where the react-native Codegen package is. Default is ../node_modules/@react-native/codegen
+    //   리액트 네이티브 Codegen 패키지가 있는 폴더. 기본값은 ../node_modules/@react-native/codegen입니다.
     // codegenDir = file("../node_modules/@react-native/codegen")
-    //   The cli.js file which is the React Native CLI entrypoint. Default is ../node_modules/react-native/cli.js
+    //   React Native CLI 진입점인 cli.js 파일. 기본값은 ../node_modules/react-native/cli.js입니다.
     // cliFile = file("../node_modules/react-native/cli.js")
 
     /* Variants */
-    //   The list of variants to that are debuggable. For those we're going to
-    //   skip the bundling of the JS bundle and the assets. By default is just 'debug'.
-    //   If you add flavors like lite, prod, etc. you'll have to list your debuggableVariants.
+    //   디버깅이 가능한 변형 목록입니다. 이 목록의 경우
+    //   JS 번들과 에셋의 번들링을 건너뜁니다. 기본값은 'debug'입니다.
+    //   lite, prod 등과 같은 버전을 추가하는 경우 debuggableVariants를 나열해야 합니다.
     // debuggableVariants = ["liteDebug", "prodDebug"]
 
     /* Bundling */
-    //   A list containing the node command and its flags. Default is just 'node'.
+    //   노드 명령과 해당 플래그를 포함하는 목록입니다. 기본값은 그냥 'node'입니다.
     // nodeExecutableAndArgs = ["node"]
     //
-    //   The command to run when bundling. By default is 'bundle'
+    //   번들링할 때 실행할 명령어. 기본값은 'bundle'입니다.
     // bundleCommand = "ram-bundle"
     //
-    //   The path to the CLI configuration file. Default is empty.
+    //   CLI 구성 파일의 경로. 기본값은 비어 있습니다.
     // bundleConfig = file(../rn-cli.config.js)
     //
-    //   The name of the generated asset file containing your JS bundle
+    //   JS 번들을 포함해 생성될 에셋 파일의 이름입니다.
     // bundleAssetName = "MyApplication.android.bundle"
     //
-    //   The entry file for bundle generation. Default is 'index.android.js' or 'index.js'
+    //   번들 생성을 위한 엔트리 파일입니다. 기본값은 'index.android.js' 또는 'index.ts'입니다.
     // entryFile = file("../js/MyApplication.android.js")
     //
-    //   A list of extra flags to pass to the 'bundle' commands.
-    //   See https://github.com/react-native-community/cli/blob/main/docs/commands.md#bundle
+    //   'bundle' 명령어에 전달할 추가 플래그 목록입니다.
+    //   참조: https://github.com/react-native-community/cli/blob/main/docs/commands.md#bundle
     // extraPackagerArgs = []
 
     /* Hermes Commands */
-    //   The hermes compiler command to run. By default it is 'hermesc'
+    //   실행할 헤르메스 컴파일러 명령. 기본값은 'hermesc'입니다.
     // hermesCommand = "$rootDir/my-custom-hermesc/bin/hermesc"
     //
-    //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
+    //   헤르메스 컴파일러에 전달할 플래그 목록입니다. 기본값은 "-O", "-output-source-map"입니다.
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
 /**
- * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
+ * 이 옵션을 true로 설정하면 네이티브 아키텍처별로 하나씩 4개의 개별 APK를 생성합니다.
+ * 이 옵션은 앱 번들(https://developer.android.com/guide/app-bundle/)을 사용하지 않고 플레이스토어에 별도의 APK를 업로드하려는 경우에 유용합니다.
+ */
+def enableSeparateBuildPerCPUArchitecture = false
+
+/**
+ * 이 옵션을 true로 설정하면 릴리스 빌드에서 Proguard를 실행하여 Java 바이트코드를 최소화할 수 있습니다.
  */
 def enableProguardInReleaseBuilds = false
 
 /**
- * The preferred build flavor of JavaScriptCore (JSC)
+ * 일반적으로 더 선호되는 JavaScriptCore(JSC) 플레이버입니다.
  *
- * For example, to use the international variant, you can use:
+ * 이밖에도 예를 들어, international variant을 사용하려면 다음을 사용할 수 있습니다:
  * `def jscFlavor = 'org.webkit:android-jsc-intl:+'`
  *
- * The international variant includes ICU i18n library and necessary data
- * allowing to use e.g. `Date.toLocaleString` and `String.localeCompare` that
- * give correct results when using with locales other than en-US. Note that
- * this variant is about 6MiB larger per architecture than default.
+ * international variant에는 ICU i18n 라이브러리 및 l10n에 필요한 데이터가 포함됩니다.
+ * 예: `Date.toLocaleString` 및 `String.localeCompare`를 사용할 수 있는 데이터가 포함.
+ * 참고: 이 variant 적용 시에 기본값의 애플리케이션보다 아키텍처당 약 6MiB 더 큽니다.
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
+
+/**
+ * 비공개 함수를 호출하여 빌드하려는 네이티브 아키텍처의 목록을 가져옵니다.
+ * 이 함수는 gradle.properties의 reactNativeArchitectures에서 값을 읽고
+ * 파일에서 값을 읽고 react-native run-android의 --active-arch-only 플래그와 함께 작동합니다.
+ */
+def reactNativeArchitectures() {
+    def value = project.getProperties().get("reactNativeArchitectures")
+    return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
+}
 
 android {
     ndkVersion rootProject.ext.ndkVersion
@@ -81,6 +96,15 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // true면 유니버셜 APK도 생성합니다.
+            include (*reactNativeArchitectures())
+        }
+    }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -94,7 +118,7 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
+            // 주의! 프로덕션 환경에서는 디버그 키가 아닌 자체 키스토어 파일을 생성해야 합니다.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
@@ -104,8 +128,12 @@ android {
 }
 
 dependencies {
-    // The version of react-native is set by the React Native Gradle Plugin
+    // 리액트 네이티브 버전은 리액트 네이티브 그래들 플러그인에 의해 설정됩니다.
+    // 리액트 네이티브 마이너 버전이 71 이하라면,
+    // 다음과 같이 변경해야 합니다.
+    // implementation("com.facebook.react:react-native:+")
     implementation("com.facebook.react:react-android")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
