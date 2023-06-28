@@ -25,8 +25,9 @@ import com.facebook.react.modules.network.NetworkingModule;
 import okhttp3.OkHttpClient;
 
 /**
- * Class responsible of loading Flipper inside your React Native application. This is the debug
- * flavor of it. Here you can add your own plugins and customize the Flipper setup.
+ * ReactNativeFlipper 클래스는 리액트 네이티브 애플리케이션 내부에서 플리퍼를 로드하는 일을 담당합니다.
+ * 이것은 디버그 버전입니다. 릴리즈 모드에서 플리퍼를 사용하는 것은 이득이 거의 없고 오히려 권장하지 않습니다.
+ * 여기에서 나만의 플러그인을 추가하고 플리퍼 설정을 사용자 지정할 수 있습니다.
  */
 public class ReactNativeFlipper {
   public static void initializeFlipper(Context context, ReactInstanceManager reactInstanceManager) {
@@ -49,8 +50,8 @@ public class ReactNativeFlipper {
       client.addPlugin(networkFlipperPlugin);
       client.start();
 
-      // Fresco Plugin needs to ensure that ImagePipelineFactory is initialized
-      // Hence we run if after all native modules have been initialized
+      /// 프레스코 플러그인은 ImagePipelineFactory가 초기화되었는지 확인해야 합니다.
+      /// 그래서 모든 네이티브 모듈이 초기화되었을 경우 실행됩니다.
       ReactContext reactContext = reactInstanceManager.getCurrentReactContext();
       if (reactContext == null) {
         reactInstanceManager.addReactInstanceEventListener(
