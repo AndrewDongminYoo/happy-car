@@ -1,5 +1,11 @@
 {
     "marquee.widgets.npm-stats.packageNames": [
         "HappyCar"
+    ],
+    "conventionalCommits.scopes": [
+        "devEnv",
+        "deps",
+        "android",
+        "react"
     ]
 }
