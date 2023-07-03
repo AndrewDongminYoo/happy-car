@@ -7,6 +7,18 @@ plugins:
       ref: v0.0.21
       uri: https://github.com/trunk-io/plugins
 lint:
+  ignore:
+    - paths:
+        - ios/Podfile.lock
+        - macos/Podfile.lock
+      linters:
+        - osv-scanner
+    - paths:
+        - '**/Images.xcassets'
+        - android/app/src/main/res
+      linters:
+        - oxipng
+        - svgo
   disabled:
     - shfmt
     - trufflehog

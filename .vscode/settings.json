@@ -6,7 +6,8 @@
     "android",
     "react",
     "ios",
-    "docs"
+    "docs",
+    "macos"
   ],
   "cSpell.ignorePaths": [
     "android/gradlew",
@@ -17,10 +18,12 @@
     "*.lock",
     ".vscode",
     ".editorconfig",
-    ".trunk/*"
+    ".trunk/*",
+    ".gitignore"
   ],
   "files.associations": {
     ".shellcheckrc": "editorconfig",
     "*/Podfile.lock": "ruby"
-  }
+  },
+  "cSpell.words": ["MMKV", "reduxjs"]
 }
