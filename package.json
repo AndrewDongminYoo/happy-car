@@ -7,7 +7,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start --reset-cache",
+    "start": "react-native rnx-start --reset-cache",
+    "dev": "react-native rnx-start --host localhost --port 8080",
     "test": "jest",
     "type-check": "tsc --noEmit",
     "test:report": "jest --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
@@ -73,6 +74,9 @@
   "rnx-kit": {
     "kitType": "app",
     "alignDeps": {
+      "presets": [
+        "microsoft/react-native"
+      ],
       "requirements": [
         "react-native@0.72"
       ],
@@ -92,6 +96,61 @@
         "react-test-renderer",
         "safe-area",
         "screens"
+      ]
+    },
+    "bundle": {
+      "entryFile": "index.js",
+      "assetsDest": "dist",
+      "plugins": [
+        "@rnx-kit/metro-plugin-cyclic-dependencies-detector",
+        [
+          "@rnx-kit/metro-plugin-duplicates-checker",
+          {
+            "ignoredModules": [
+              "react-is"
+            ]
+          }
+        ],
+        "@rnx-kit/metro-plugin-typescript"
+      ],
+      "targets": [
+        "ios",
+        "android",
+        "macos"
+      ],
+      "platforms": {
+        "android": {
+          "assetsDest": "dist/res"
+        },
+        "macos": {
+          "plugins": [
+            "@rnx-kit/metro-plugin-cyclic-dependencies-detector",
+            [
+              "@rnx-kit/metro-plugin-duplicates-checker",
+              {
+                "ignoredModules": [
+                  "react-is"
+                ]
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "server": {
+      "projectRoot": "src",
+      "plugins": [
+        "@rnx-kit/metro-plugin-cyclic-dependencies-detector",
+        [
+          "@rnx-kit/metro-plugin-duplicates-checker",
+          {
+            "ignoredModules": [
+              "react-is"
+            ],
+            "throwOnError": false
+          }
+        ],
+        "@rnx-kit/metro-plugin-typescript"
       ]
     }
   }
