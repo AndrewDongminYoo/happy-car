@@ -104,7 +104,7 @@
       ]
     },
     "bundle": {
-      "entryFile": "index.js",
+      "entryFile": "index.ts",
       "assetsDest": "dist",
       "plugins": [
         "@rnx-kit/metro-plugin-cyclic-dependencies-detector",
