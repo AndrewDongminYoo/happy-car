@@ -1,15 +1,26 @@
 {
-    "marquee.widgets.npm-stats.packageNames": [
-        "HappyCar"
-    ],
-    "conventionalCommits.scopes": [
-        "devEnv",
-        "deps",
-        "android",
-        "react"
-    ],
-    "cSpell.words": [
-        "MMKV",
-        "reduxjs"
-    ]
+  "marquee.widgets.npm-stats.packageNames": ["HappyCar"],
+  "conventionalCommits.scopes": [
+    "devEnv",
+    "deps",
+    "android",
+    "react",
+    "ios",
+    "docs"
+  ],
+  "cSpell.ignorePaths": [
+    "android/gradlew",
+    "ios/*.xcodeproj/project.pbxproj",
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "*.lock",
+    ".vscode",
+    ".editorconfig",
+    ".trunk/*"
+  ],
+  "files.associations": {
+    ".shellcheckrc": "editorconfig",
+    "*/Podfile.lock": "ruby"
+  }
 }

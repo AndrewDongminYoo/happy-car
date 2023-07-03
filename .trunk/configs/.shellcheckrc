@@ -1,0 +1,10 @@
+enable=all
+source-path=SCRIPTDIR
+disable=SC2312 # Consider invoking this command separately to avoid masking its return value (or use '|| true' to ignore).
+disable=SC2249 # Consider adding a default *) case, even if it just exits with error.
+disable=SC2230 # 'which' is non-standard. Use builtin 'command -v' instead.
+disable=SC2154 # var is referenced but not assigned.
+
+# If you're having issues with shellcheck following source, disable the errors via:
+# disable=SC1090
+# disable=SC1091
