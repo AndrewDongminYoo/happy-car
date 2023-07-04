@@ -10,7 +10,7 @@ import { Gutters, ThemeVariables } from '../../@types/theme';
  * where:
  * <size>: is the key of the variable included in MetricsSizes
  * <direction>: can be ['Bottom','Top','Right','Left','Horizontal','Vertical']
- * <op>: can be ['Margin', 'Padding']
+ * <op>: can be ['Margin','Padding']
  * <value>: is the value of the <size>
  */
 export default function ({ MetricsSizes }: ThemeVariables): Gutters {

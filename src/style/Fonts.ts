@@ -1,5 +1,5 @@
 /**
- * This file contains all application's style relative to fonts
+ * 이 파일에는 글꼴과 관련된 모든 애플리케이션의 스타일이 포함되어 있습니다.
  */
 import { StyleSheet } from 'react-native';
 import { ThemeVariables } from '../../@types/theme';

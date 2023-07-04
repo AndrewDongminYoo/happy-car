@@ -3,7 +3,7 @@ import { ThemeVariables } from '../../@types/theme';
 
 export default function ({}: ThemeVariables) {
   return StyleSheet.create({
-    /* Column Layouts */
+    /** Column Layouts */
     col: {
       flexDirection: 'column',
     },
@@ -23,7 +23,7 @@ export default function ({}: ThemeVariables) {
       flexDirection: 'column',
       justifyContent: 'center',
     },
-    /* Row Layouts */
+    /** Row Layouts */
     row: {
       flexDirection: 'row',
     },
@@ -43,7 +43,7 @@ export default function ({}: ThemeVariables) {
       flexDirection: 'row',
       alignItems: 'center',
     },
-    /* Default Layouts */
+    /** Default Layouts */
     center: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -83,7 +83,7 @@ export default function ({}: ThemeVariables) {
     selfStretch: {
       alignSelf: 'stretch',
     },
-    /* Sizes Layouts */
+    /** Sizes Layouts */
     fill: {
       flex: 1,
     },
@@ -100,7 +100,7 @@ export default function ({}: ThemeVariables) {
     fullHeight: {
       height: '100%',
     },
-    /* Operation Layout */
+    /** Operation Layout */
     mirror: {
       transform: [{ scaleX: -1 }],
     },

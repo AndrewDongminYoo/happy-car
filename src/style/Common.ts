@@ -1,7 +1,7 @@
 /**
- * This file defines the base application styles.
+ * 이 파일은 기본 애플리케이션 스타일을 정의합니다.
  *
- * Use it to define generic component styles (e.g. the default text styles, default button styles...).
+ * 이 파일을 사용하여 일반 컴포넌트 스타일(예: 기본 텍스트 스타일, 기본 버튼 스타일...)을 정의할 수 있습니다.
  */
 import { StyleSheet } from 'react-native';
 import buttonStyles from './components/Buttons';
