@@ -35,11 +35,9 @@
     "react-native-reanimated": "^3.3.0",
     "react-native-safe-area-context": "^4.5.3",
     "react-native-screens": "^3.21.0",
-    "react-native-vision-camera": "2.15.4",
     "react-redux": "8.1.1",
     "redux": "4.2.1",
-    "redux-persist": "6.0.0",
-    "vision-camera-code-scanner": "0.2.0"
+    "redux-persist": "6.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",
@@ -110,7 +108,7 @@
       ]
     },
     "bundle": {
-      "entryFile": "index.ts",
+      "entryFile": "index.js",
       "assetsDest": "dist",
       "plugins": [
         "@rnx-kit/metro-plugin-cyclic-dependencies-detector",

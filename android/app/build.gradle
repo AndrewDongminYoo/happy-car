@@ -35,7 +35,7 @@ react {
     //   JS 번들을 포함해 생성될 에셋 파일의 이름입니다.
     // bundleAssetName = "MyApplication.android.bundle"
     //
-    //   번들 생성을 위한 엔트리 파일입니다. 기본값은 'index.android.js' 또는 'index.ts'입니다.
+    //   번들 생성을 위한 엔트리 파일입니다. 기본값은 'index.android.js' 또는 'index.js'입니다.
     // entryFile = file("../js/MyApplication.android.js")
     //
     //   'bundle' 명령어에 전달할 추가 플래그 목록입니다.
