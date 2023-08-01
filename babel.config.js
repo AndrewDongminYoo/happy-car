@@ -1,6 +1,11 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-  presets: ['@rnx-kit/babel-preset-metro-react-native'],
+  presets: [
+    '@rnx-kit/babel-preset-metro-react-native',
+    {
+      additionalPlugins: ['const-enum'],
+    },
+  ],
   plugins: [
     [
       'module-resolver',
