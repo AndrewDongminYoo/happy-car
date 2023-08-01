@@ -69,6 +69,7 @@ target 'HappyCar' do
   end
 
   post_install do |installer|
+    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     # # 일부 플래그와 빌드 설정을 구성하기 위해 React Native를 설치한 후 실행하는 함수입니다.
     #
     # Parameters
