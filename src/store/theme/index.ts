@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, type Slice } from '@reduxjs/toolkit';
 import themes from '../../style/themes';
 
-const slice = createSlice({
+const slice: Slice = createSlice({
   name: 'theme',
   initialState: { theme: 'default', darkMode: null } as ThemeState,
   reducers: {

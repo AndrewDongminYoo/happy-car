@@ -1,5 +1,5 @@
-import Variables from '../src/theme/Variables';
-import { DefaultVariables, Fonts, Gutters, Images, Layout } from '../src/theme';
+import Variables from '../src/style/Variables';
+import { DefaultVariables, Fonts, Gutters, Images, Layout } from '../src/style';
 import { Theme as ReactNavigationTheme } from '@react-navigation/native/src/types';
 
 export type ThemeVariables = {

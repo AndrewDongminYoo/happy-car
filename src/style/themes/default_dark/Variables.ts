@@ -4,7 +4,6 @@
  * 색상, 크기 등을 모든 컴포넌트에 복제하지 말고 여기에서 정의하세요.
  * 나중에 더 쉽게 변경할 수 있습니다.
  */
-
 import { ThemeNavigationColors } from '../../../../@types/theme';
 
 /**
@@ -25,6 +24,9 @@ export const NavigationColors: Partial<ThemeNavigationColors> = Object.freeze({
   primary: Colors.primary,
   background: '#1B1A23',
   card: '#1B1A23',
+  // text: string,
+  // border: string,
+  // notification: string,
 });
 
 export default {

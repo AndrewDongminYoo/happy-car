@@ -1,22 +1,22 @@
+import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { useColorScheme } from 'react-native';
 import { useSelector } from 'react-redux';
-import { DarkTheme, DefaultTheme } from '@react-navigation/native';
+import {
+  Theme,
+  ThemeNavigationColors,
+  ThemeNavigationTheme,
+  ThemeVariables,
+} from '../../@types/theme';
+import { ThemeState } from '../store/theme';
 import {
   Common,
+  DefaultVariables,
   Fonts,
   Gutters,
   Images,
   Layout,
   themes,
-  DefaultVariables,
 } from '../style';
-import { ThemeState } from '../store/theme';
-import {
-  ThemeVariables,
-  Theme,
-  ThemeNavigationTheme,
-  ThemeNavigationColors,
-} from '../../@types/theme';
 
 /** 디바이스 컬러 스키마와 Redux Store 내의 현재 테마 설정을 기반으로 현재 테마를 빌드하고 반환하는 역할을 하는 함수 */
 export default function () {

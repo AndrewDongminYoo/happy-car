@@ -1,9 +1,9 @@
 import {
   BaseQueryFn,
   FetchArgs,
+  FetchBaseQueryError,
   createApi,
   fetchBaseQuery,
-  FetchBaseQueryError,
 } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
